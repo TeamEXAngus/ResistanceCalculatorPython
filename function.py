@@ -14,7 +14,7 @@ colourValues = {
 		    "blue"    : [6    , 1000000     , "±0.25%"  , " 10ppm/K"  ],
 		    "purple"  : [7    , 10000000    , "±0.1%"   , " 5ppm/K"   ],
 		    "gray"    : [8    , 100000000   , "±0.05%"  , " 1ppm/K"   ],
-        "white"   : [9    , 1000000000  , None      , None        ],
+        	    "white"   : [9    , 1000000000  , None      , None        ],
 		    "gold"    : [None , 0.1         , "±5%"     , None        ],
 		    "silver"  : [None , 0.01        , "±10%"    , None        ]
 		} #Reference: https://eepower.com/uploads/education/resistor_color_codes_chart.png
@@ -40,10 +40,10 @@ def resistanceCalculate(colours):
     output = 0
 
     #Loop through the code for adding digits the appropriate number of times
-    # 3 bands = 2 digits and 4 // 2 = 2 
-    # 4 bands = 2 digits and 5 // 2 = 2
-    # 5 bands = 3 digits and 6 // 2 = 3
-    # 6 bands = 3 digits and 7 // 2 = 3
+    # 3 bands = 2 digits and (3 + 1) // 2 = 2 
+    # 4 bands = 2 digits and (4 + 1) // 2 = 2
+    # 5 bands = 3 digits and (5 + 1) // 2 = 3
+    # 6 bands = 3 digits and (6 + 1) // 2 = 3
     for i in range ( ( len(colours) + 1 ) // 2 ):
 
       #Multiplies 'output' by ten so that each time the for-loop is run, a new digit is added rather than just adding two numbers together
